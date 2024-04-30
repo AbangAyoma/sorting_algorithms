@@ -5,11 +5,11 @@
 void bubble_sort(int *array, size_t size);
 void swap(int *a, int *b);
 
-int main() {
+int main(void) {
     int array[] = {64, 34, 25, 12, 22, 11, 90};
     size_t size = sizeof(array) / sizeof(array[0]);
 
-    printf("Original array: ");
+    //printf("Original array: ");
     for (size_t i = 0; i < size; i++) {
         printf("%d ", array[i]);
     }
@@ -17,7 +17,7 @@ int main() {
 
     bubble_sort(array, size);
 
-    printf("Sorted array: ");
+    //printf("Sorted array: ");
     for (size_t i = 0; i < size; i++) {
         printf("%d ", array[i]);
     }
@@ -34,7 +34,8 @@ void swap(int *a, int *b) {
 
 void bubble_sort(int *array, size_t size) {
     for (size_t i = 0; i < size - 1; i++) {
-        // Flag to check if any swap occurred in this iteration
+        // Flag to check if any swap occurred in this iteration of the array
+	
         int swapped = 0;
         
         for (size_t j = 0; j < size - i - 1; j++) {
@@ -49,7 +50,7 @@ void bubble_sort(int *array, size_t size) {
             break;
 
         // Print the array after each pass
-        printf("Array after pass %zu: ", i + 1);
+        printf("%zu: ", i + 1);
         for (size_t k = 0; k < size; k++) {
             printf("%d ", array[k]);
         }
